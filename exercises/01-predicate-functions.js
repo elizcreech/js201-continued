@@ -6,7 +6,6 @@
 // - isString(s)
 // - isValidZipCode(code)
 // etc
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isVowel" that takes a character (i.e. a string of length 1)
 // as input and returns true if it is a vowel, false otherwise.
@@ -21,7 +20,13 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
-
+function isVowel (inChar){
+    var upperChar = inChar.toString().toUpperCase()
+    var vowelArr = ['A', 'E', 'I', 'O', 'U']
+    console.log(vowelArr.includes(upperChar))
+    return  vowelArr.includes(upperChar)
+}
+isVowel('e')
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
@@ -37,8 +42,30 @@
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+// function isEven (number){
+//     var tfResponse 
+//     if ((Number.isInteger(number)) === false){
+//         tfResponse = false
+//     } else  if ((number % 2) === 0) {
+//             tfResponse = true
+//     } else tfResponse = false   
+//     console.log(tfResponse)
+//     return tfResponse
+// }
+// isEven(2)
 
-
+function isOdd (number){
+    var tfResponse
+    if ((Number.isInteger(number)) === false){
+        tfResponse = false
+    } 
+    else if ((number % 2) >0) {
+        tfResponse = true
+    } else tfResponse = false
+    console.log(tfResponse)
+    return tfResponse
+}
+isOdd(5)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
 // and returns true or false if the city name is the capital of the state.
@@ -52,3 +79,27 @@
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+function isCapitalCity (state, city){
+    var retCapipalCityCheck = false
+    console.log('Input is:'+state+' '+city)
+    var stateCityObj = {
+      'Alabama' : 'Montgomery',
+      'Alaska' : 'Juneau',
+      'Arkansas' : 'Little Rock',
+      'Califonia' : 'Sacramento',
+      'Coloardo' : 'Denver',
+      'Forida' : 'Tallahassee',
+      'Georgia' : 'Atlanta',
+      'Texas' : 'Austin'
+  }
+//Why didn't the dot notation work - but bracket notation does?
+// stateCityObj.state returned undefined
+//console.log(stateCityObj.state)
+if (stateCityObj[state] === city) {
+    retCapipalCityCheck = true
+}
+  console.log(retCapipalCityCheck)
+  return retCapipalCityCheck 
+}
+isCapitalCity('Strawberry', 'Mango')

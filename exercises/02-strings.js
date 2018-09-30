@@ -8,7 +8,18 @@
 // Example:
 // reverse("skoob") --> "books"
 
+//Convert string to an array
+// use the reverse array reverse() myarray.reverse()
+// convert array back to string using toString() myArray.toString()
 
+// function reverse (aStrng){
+//     var combined = aStrng.split('').reverse().join('')
+    
+//     console.log(combined)
+
+//     return combined
+// }
+// reverse('skoob')
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "findLongestWord" that takes a string of words and returns
@@ -18,6 +29,16 @@
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
+function findLongestWord (strOfWords){
+    var splitStrng = strOfWords.split(' ')
+    var longestWordLength = 0
+    for (i=0; i < splitString.length; i++){
+        if(splitStr[i].length > longestWordLength) {
+            longestWordLength = splitStr[i].length
+        }
+    }
+
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
