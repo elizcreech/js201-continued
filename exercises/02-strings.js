@@ -29,17 +29,22 @@
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
-function findLongestWord (strOfWords){
-    var splitStrng = strOfWords.split(' ')
-    var longestWordLength = 0
-    for (i=0; i < splitString.length; i++){
-        if(splitStr[i].length > longestWordLength) {
-            longestWordLength = splitStr[i].length
-        }
-    }
-
-}
-
+// function findLongestWord (strOfWords){
+//     var wordsArr = strOfWords.split(' ')
+//     console.log('The number of words is: '+wordsArr.length)
+//     var longestWordLength = 0
+//     var longestWord = ''
+//     for (i=0; i < wordsArr.length; i++){
+//         console.log('Count :'+i+' Word:'+wordsArr[i]+' Length: '+wordsArr[i].length)
+//         if (wordsArr[i].length > longestWordLength) {
+//             longestWordLength = wordsArr[i].length
+//             longestWord = wordsArr[i]
+//         } 
+//     }
+//     console.log('1st Longest Word:'+longestWord+' Length: '+longestWordLength)
+//     return longestWord
+// }
+// findLongestWord('a book full of dog')
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "nicer"
@@ -49,7 +54,18 @@ function findLongestWord (strOfWords){
 // Example:
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
+// function nicer (dirtySentence){
+//     var words = dirtySentence.split(' ')
 
+//     function isDirtyWord(word){
+//         return word !== 'heck' && word !== 'darn' && word !== 'dang' && word !== 'crappy'
+//     }
+//     var cleanWords = words.filter(isDirtyWord)
+//     cleanSentence = cleanWords.join(' ')
+//     console.log(cleanSentence)
+//     return cleanSentence
+// }
+// nicer('mom get the heck in here and bring me a darn sandwich.')
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +77,39 @@ function findLongestWord (strOfWords){
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
 
+// function capitalizeAll (sentence){
+//     // put the sentence into an array
+//     var words = sentence.split(' ')
+//     //write a function that capitalizes the first letter of an element
+//     function capFirstLetter(word){
+//        return word.charAt(0).toUpperCase() + word.slice(1)
+//     }
+//     // call the function for all the words
+//     var capWords = words.forEach(capFirstLetter)
 
+//      // put all the elements back into a string
+//     capSentence = capWords.join(' ')
+//     console.log(capSentence)
+//     return capSentence
+// }
+// capitalizeAll('every day is like sunday')
+
+function capitalizeAll(sentence){
+    var words = sentence.split(' ')
+    var capWords = []
+
+   for (i=0; i < words.length; i++){
+       capWords.push(words[i].charAt(0).toUpperCase() + words[i].slice(1))
+   }
+
+   // why didn't the forEach work?
+   // 
+   capSentence = capWords.join(' ')
+   
+   console.log(capSentence)
+   return capSentence
+    }
+    capitalizeAll('every day is like sunday')
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split

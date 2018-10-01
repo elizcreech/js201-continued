@@ -42,17 +42,17 @@ isVowel('e')
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
-// function isEven (number){
-//     var tfResponse 
-//     if ((Number.isInteger(number)) === false){
-//         tfResponse = false
-//     } else  if ((number % 2) === 0) {
-//             tfResponse = true
-//     } else tfResponse = false   
-//     console.log(tfResponse)
-//     return tfResponse
-// }
-// isEven(2)
+function isEven (number){
+    var tfResponse 
+    if ((Number.isInteger(number)) === false){
+        tfResponse = false
+    } else  if ((number % 2) === 0) {
+            tfResponse = true
+    } else tfResponse = false   
+    console.log(tfResponse)
+    return tfResponse
+}
+isEven(-2)
 
 function isOdd (number){
     var tfResponse
@@ -65,7 +65,7 @@ function isOdd (number){
     console.log(tfResponse)
     return tfResponse
 }
-isOdd(5)
+isOdd(4)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
 // and returns true or false if the city name is the capital of the state.
