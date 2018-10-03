@@ -94,22 +94,22 @@
 // }
 // capitalizeAll('every day is like sunday')
 
-function capitalizeAll(sentence){
-    var words = sentence.split(' ')
-    var capWords = []
+// function capitalizeAll(sentence){
+//     var words = sentence.split(' ')
+//     var capWords = []
 
-   for (i=0; i < words.length; i++){
-       capWords.push(words[i].charAt(0).toUpperCase() + words[i].slice(1))
-   }
+//    for (i=0; i < words.length; i++){
+//        capWords.push(words[i].charAt(0).toUpperCase() + words[i].slice(1))
+//    }
 
-   // why didn't the forEach work?
-   // 
-   capSentence = capWords.join(' ')
+//    // why didn't the forEach work?
+//    // 
+//    capSentence = capWords.join(' ')
    
-   console.log(capSentence)
-   return capSentence
-    }
-    capitalizeAll('every day is like sunday')
+//    console.log(capSentence)
+//    return capSentence
+//     }
+//     capitalizeAll('every day is like sunday')
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
@@ -121,3 +121,77 @@ function capitalizeAll(sentence){
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+// function split (inString, delimiter) {
+//     // This function will take the elements inside the inString and seperate them based on the given dlimiter
+//     var tempString = ''
+//     var splitArr = []
+//     var delimiterLen
+//     var delimCnt = 0
+//     //Check for multichar delimiter
+//     delimiterLen = delimiter.length
+
+//     for (i=0; i < inString.length; i++) { 
+//         if (inString.charAt(i) !== delimiter.charAt(0)){
+//             // reset the delimter char counter
+//             delimCnt = 0
+//             tempString += inString.charAt(i)
+            
+//         } else  {
+//             // We're at a delimiter. Check the delimter char counter
+//             if (delimCnt === 0) {
+//                 //it's the fist time we've hit the delimiter so add the string to array
+//                 splitArr.push(tempString)
+//                 // Clear the tempString
+//                 tempString = ''
+//             } 
+//             delimCnt = delimCnt + 1
+
+//         } 
+//        // We got to the last word so we put it into the array
+//         if (i === inString.length-1){
+//         splitArr.push(tempString)
+//         }
+       
+         
+//     }   
+
+//     for (i=0; i < splitArr.length; i++) {
+//        console.log('New Obj '+i+' '+splitArr[i])
+//     }
+// return splitArr
+// }
+// split('APPLExxxBANANAxxxCHERRY', 'xxx')
+
+// Review in Class
+function split (str, delimiter) {
+  let resultArray = []
+  let delimiterIdx = str.indexOf(delimiter)
+  while (delimiterIdx !== -1) {    //While there is no more delimiter in the string
+
+// do the chunk procedure
+   const chunk = str.substring(0, delimiterIdx)
+   resultArray.push(chunk)
+
+   str = str.substring(chunk.length)
+   str = str.substring(delimiter.length)
+
+  
+
+   delimiterIdx =str.indexOf(delimiter)
+  }
+resultArray.push(str)
+console.log(resultArray)
+// const  testSplit = split('a-b-c', '-')
+// console.log(testSplit)
+}
+  
+//   const delimiterIdx = str.indexOf(delimiter)
+//    const firstChunk = str.substring(0, delimiterIdx)
+//    resultArray.push(firstChunk)
+
+//    str = str.substring(firstChunk.length)
+//    str = str.substring(delimiter.length)
+
+
+split('APPLExxxBANANAxxxCHERRY', 'xxx')
+ 
